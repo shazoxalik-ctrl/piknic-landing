@@ -8,48 +8,69 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--gd:#0f3311;--gm:#1e5c22;--g:#2d7a33;--gp:#e8f5e0;--y:#f5e878}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#111;overflow-x:hidden}
-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,51,17,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,51,17,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-wrap img{height:44px;width:44px;object-fit:contain}
+.logo-wrap img{height:42px;width:42px;object-fit:contain}
 .logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-text span:first-child{font-size:16px;font-weight:700;color:#fff;letter-spacing:1px}
-.logo-text span:last-child{font-size:9px;font-weight:500;color:var(--y);letter-spacing:2px}
-.lang-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:6px 16px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:600;transition:.2s}
-.lang-btn:hover{background:rgba(255,255,255,0.25)}
-.hero{height:100vh;background:linear-gradient(135deg,var(--gd) 0%,var(--gm) 50%,#1a4a1e 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px 40px;position:relative;overflow:hidden}
-.hero-content{position:relative;z-index:1}
-.hero h1{font-size:clamp(36px,8vw,80px);font-weight:800;color:#fff;letter-spacing:-2px;line-height:1.05;margin-bottom:20px}
-.hero h1 span{color:var(--y)}
-.hero p{font-size:clamp(15px,2.5vw,20px);color:rgba(255,255,255,0.8);max-width:500px;margin:0 auto 40px;line-height:1.6}
-.hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--y);color:var(--gd);padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;text-decoration:none;transition:.2s;cursor:pointer;border:none}
-.hero-cta:hover{transform:scale(1.04);box-shadow:0 8px 30px rgba(245,232,120,0.4)}
-.categories{padding:100px 24px 60px}
-.section-title{text-align:center;margin-bottom:60px}
-.section-title h2{font-size:clamp(28px,5vw,48px);font-weight:800;color:var(--gd);letter-spacing:-1px}
-.section-title p{font-size:16px;color:#666;margin-top:10px}
-.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:50px;flex-wrap:wrap}
-.tab{padding:10px 28px;border-radius:30px;border:2px solid var(--g);color:var(--g);font-size:15px;font-weight:600;cursor:pointer;transition:.2s;background:#fff}
+.logo-text .lt1{font-size:15px;font-weight:700;color:#fff;letter-spacing:1px}
+.logo-text .lt2{font-size:8px;font-weight:500;color:var(--y);letter-spacing:2.5px}
+.header-right{display:flex;align-items:center;gap:16px}
+.header-phone{color:#fff;font-size:14px;font-weight:600;text-decoration:none;opacity:.9}
+.header-phone:hover{opacity:1}
+.lang-wrap{display:flex;border:1.5px solid rgba(255,255,255,0.4);border-radius:20px;overflow:hidden}
+.lang-opt{padding:5px 14px;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);cursor:pointer;transition:.15s;border:none;background:transparent}
+.lang-opt.active{background:rgba(255,255,255,0.25);color:#fff}
+
+/* HERO */
+.hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero-bg{position:absolute;inset:0;background:url('images/palatka/p1.png') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,35,12,0.55) 0%,rgba(10,35,12,0.72) 100%)}
+.hero-content{position:relative;z-index:1;padding:100px 24px 60px;max-width:740px}
+.hero-content h1{font-size:clamp(32px,7vw,68px);font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:18px}
+.hero-content p{font-size:clamp(15px,2.2vw,19px);color:rgba(255,255,255,0.82);line-height:1.65;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#fff;color:var(--gd);padding:15px 34px;border-radius:50px;font-size:15px;font-weight:700;border:none;cursor:pointer;transition:.2s;text-decoration:none}
+.btn-primary:hover{background:var(--y);transform:scale(1.04)}
+.btn-secondary{background:rgba(255,255,255,0.15);color:#fff;padding:15px 34px;border-radius:50px;font-size:15px;font-weight:700;border:2px solid rgba(255,255,255,0.5);cursor:pointer;transition:.2s;text-decoration:none}
+.btn-secondary:hover{background:rgba(255,255,255,0.25)}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.6);font-size:12px;text-align:center;animation:bounce 2s infinite}
+.scroll-hint span{display:block;margin-top:6px;font-size:20px}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* PRODUCTS */
+.products{padding:90px 24px 60px}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:clamp(26px,4.5vw,44px);font-weight:800;color:var(--gd);letter-spacing:-1px}
+.section-title p{font-size:15px;color:#777;margin-top:10px}
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:44px;flex-wrap:wrap}
+.tab{padding:10px 26px;border-radius:30px;border:2px solid var(--g);color:var(--g);font-size:14px;font-weight:700;cursor:pointer;transition:.2s;background:#fff}
 .tab.active{background:var(--g);color:#fff}
 .tab:hover:not(.active){background:var(--gp)}
 .cat-section{display:none}
 .cat-section.active{display:block}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;max-width:1200px;margin:0 auto}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:.3s;cursor:pointer;text-decoration:none;color:inherit;display:block}
-.card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,0.15)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:22px;max-width:1200px;margin:0 auto}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.08);transition:.3s;text-decoration:none;color:inherit;display:block}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,0,0.14)}
 .card-img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
-.card-body{padding:20px}
-.card-name{font-size:16px;font-weight:700;color:var(--gd);margin-bottom:6px;line-height:1.3}
-.card-price{font-size:20px;font-weight:800;color:var(--g)}
-.card-btn{display:block;width:100%;margin-top:14px;padding:12px;background:var(--g);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;text-align:center;text-decoration:none}
+.card-body{padding:18px}
+.card-name{font-size:15px;font-weight:700;color:var(--gd);margin-bottom:6px;line-height:1.3}
+.card-price{font-size:19px;font-weight:800;color:var(--g)}
+.card-btn{display:block;width:100%;margin-top:12px;padding:11px;background:var(--g);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:.2s}
 .card-btn:hover{background:var(--gd)}
-.strip{background:var(--gd);padding:60px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;max-width:1100px;margin:60px auto;border-radius:24px;text-align:center}
+
+/* STRIP */
+.strip{background:var(--gd);padding:56px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:28px;max-width:1100px;margin:60px auto;border-radius:22px;text-align:center}
 .strip-item{color:#fff}
-.strip-icon{font-size:36px;margin-bottom:12px}
-.strip-item h3{font-size:18px;font-weight:700;margin-bottom:6px}
-.strip-item p{font-size:13px;opacity:.75;line-height:1.5}
-footer{background:var(--gd);color:rgba(255,255,255,0.7);text-align:center;padding:32px 24px;font-size:13px}
+.strip-icon{font-size:34px;margin-bottom:10px}
+.strip-item h3{font-size:16px;font-weight:700;margin-bottom:5px}
+.strip-item p{font-size:12px;opacity:.7;line-height:1.5}
+
+footer{background:var(--gd);color:rgba(255,255,255,0.65);text-align:center;padding:28px 24px;font-size:13px}
 footer a{color:var(--y);text-decoration:none}
-.fade-up{opacity:0;transform:translateY(40px);transition:.7s ease}
+
+.fade-up{opacity:0;transform:translateY(36px);transition:.65s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
@@ -59,47 +80,60 @@ footer a{color:var(--y);text-decoration:none}
   <a class="logo-wrap" href="index.html">
     <img src="logo.svg" alt="Piknic">
     <div class="logo-text">
-      <span>PIKNIC</span>
-      <span>UZBEKISTAN</span>
+      <span class="lt1">PIKNIC</span>
+      <span class="lt2">UZBEKISTAN</span>
     </div>
   </a>
-  <button class="lang-btn" onclick="toggleLang()">RU</button>
+  <div class="header-right">
+    <a class="header-phone" href="tel:+998555888444">+998 55 588 84 44</a>
+    <div class="lang-wrap">
+      <button class="lang-opt active" id="btn-uz" onclick="setLang('uz')">UZ</button>
+      <button class="lang-opt" id="btn-ru" onclick="setLang('ru')">RU</button>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1><span data-uz="Tabiat uchun" data-ru="Качественное">Tabiat uchun</span><br><span style="color:var(--y)" data-uz="sifatli jihozlar" data-ru="снаряжение">sifatli jihozlar</span></h1>
-    <p data-uz="Kemping va piknik uchun eng yaxshi mahsulotlar. Rahat, chidamli va arzon narxlarda." data-ru="Лучшие товары для кемпинга и пикника. Удобно, надёжно и по доступным ценам.">Kemping va piknik uchun eng yaxshi mahsulotlar. Rahat, chidamli va arzon narxlarda.</p>
-    <button class="hero-cta" onclick="document.querySelector('.categories').scrollIntoView({behavior:'smooth'})">
-      <span data-uz="Mahsulotlarni ko'rish" data-ru="Смотреть товары">Mahsulotlarni ko'rish</span> ↓
-    </button>
+    <h1 data-uz="Tabiatda dam olish — yangi darajada" data-ru="Отдых на природе — на новом уровне">Tabiatda dam olish — yangi darajada</h1>
+    <p data-uz="Kemping va piknik uchun barcha kerakli jihozlar. Yuqori sifat, qulay narx." data-ru="Всё необходимое для кемпинга и пикника. Высокое качество, доступные цены.">Kemping va piknik uchun barcha kerakli jihozlar. Yuqori sifat, qulay narx.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.querySelector('.products').scrollIntoView({behavior:'smooth'})" data-uz="Mahsulotlarni ko'rish" data-ru="Смотреть товары">Mahsulotlarni ko'rish</button>
+      <a class="btn-secondary" href="tel:+998555888444" data-uz="Qo'ng'iroq qilish" data-ru="Позвонить нам">Qo'ng'iroq qilish</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span data-uz="Pastga aylantiring" data-ru="Прокрутите вниз">Pastga aylantiring</span>
+    <span>↓</span>
   </div>
 </section>
 
-<section class="categories">
+<section class="products">
   <div class="section-title fade-up">
     <h2 data-uz="Bizning mahsulotlar" data-ru="Наши товары">Bizning mahsulotlar</h2>
     <p data-uz="Kemping uchun hamma narsa bir joyda" data-ru="Всё для кемпинга в одном месте">Kemping uchun hamma narsa bir joyda</p>
   </div>
 
   <div class="tabs">
-    <button class="tab active" id="tab-palatka" onclick="showCat('palatka',this)">🏕 <span data-uz="Palatkalar" data-ru="Палатки">Palatkalar</span></button>
-    <button class="tab" id="tab-raskladushka" onclick="showCat('raskladushka',this)">🛏 <span data-uz="Raskladushkalar" data-ru="Раскладушки">Raskladushkalar</span></button>
-    <button class="tab" id="tab-stul" onclick="showCat('stul',this)">🪑 <span data-uz="Stullar" data-ru="Стулья">Stullar</span></button>
+    <button class="tab active" onclick="showCat('palatka',this)">🏕 <span data-uz="Palatkalar" data-ru="Палатки">Palatkalar</span></button>
+    <button class="tab" onclick="showCat('raskladushka',this)">🛏 <span data-uz="Raskladushkalar" data-ru="Раскладушки">Raskladushkalar</span></button>
+    <button class="tab" onclick="showCat('stul',this)">🪑 <span data-uz="Stullar" data-ru="Стулья">Stullar</span></button>
   </div>
 
   <div class="cat-section active" id="cat-palatka">
     <div class="grid">
       <a class="card fade-up" href="palatka-1.html">
-        <img class="card-img" src="images/palatka/p1.png" alt="Palatka" loading="lazy">
+        <img class="card-img" src="images/palatka/p1.png" alt="" loading="lazy">
         <div class="card-body">
-          <div class="card-name" data-uz="Puflama kemping palatka 2-3 kishi" data-ru="Надувная кемпинговая палатка 2-3 чел.">Puflama kemping palatka 2-3 kishi</div>
+          <div class="card-name" data-uz="Puflama kemping palatka 2-3 kishi" data-ru="Надувная палатка 2-3 чел.">Puflama kemping palatka 2-3 kishi</div>
           <div class="card-price">2 200 000 so'm</div>
           <span class="card-btn" data-uz="Batafsil →" data-ru="Подробнее →">Batafsil →</span>
         </div>
       </a>
       <a class="card fade-up" href="palatka-2.html">
-        <img class="card-img" src="images/palatka/p2.png" alt="Palatka" loading="lazy">
+        <img class="card-img" src="images/palatka/p2.png" alt="" loading="lazy">
         <div class="card-body">
           <div class="card-name" data-uz="Soyabonli katta kemping palatka" data-ru="Большая палатка с навесом">Soyabonli katta kemping palatka</div>
           <div class="card-price">2 600 000 so'm</div>
@@ -107,15 +141,15 @@ footer a{color:var(--y);text-decoration:none}
         </div>
       </a>
       <a class="card fade-up" href="palatka-3.html">
-        <img class="card-img" src="images/palatka/p3.png" alt="Palatka" loading="lazy">
+        <img class="card-img" src="images/palatka/p3.png" alt="" loading="lazy">
         <div class="card-body">
-          <div class="card-name" data-uz="Puflama palatka sargish (daryo)" data-ru="Надувная палатка бежевая (у реки)">Puflama palatka sargish (daryo)</div>
+          <div class="card-name" data-uz="Puflama palatka sargish (daryo)" data-ru="Надувная палатка бежевая">Puflama palatka sargish (daryo)</div>
           <div class="card-price">1 750 000 so'm</div>
           <span class="card-btn" data-uz="Batafsil →" data-ru="Подробнее →">Batafsil →</span>
         </div>
       </a>
       <a class="card fade-up" href="palatka-4.html">
-        <img class="card-img" src="images/palatka/p4.png" alt="Palatka" loading="lazy">
+        <img class="card-img" src="images/palatka/p4.png" alt="" loading="lazy">
         <div class="card-body">
           <div class="card-name" data-uz="Harbiy uslub palatka + soyabon" data-ru="Палатка военный стиль + навес">Harbiy uslub palatka + soyabon</div>
           <div class="card-price">2 600 000 so'm</div>
@@ -123,7 +157,7 @@ footer a{color:var(--y);text-decoration:none}
         </div>
       </a>
       <a class="card fade-up" href="palatka-5.html">
-        <img class="card-img" src="images/palatka/p5.png" alt="Palatka" loading="lazy">
+        <img class="card-img" src="images/palatka/p5.png" alt="" loading="lazy">
         <div class="card-body">
           <div class="card-name" data-uz="Katta oq palatka 7.5m² (oynali)" data-ru="Большая белая палатка 7.5м²">Katta oq palatka 7.5m² (oynali)</div>
           <div class="card-price">3 300 000 so'm</div>
@@ -136,15 +170,15 @@ footer a{color:var(--y);text-decoration:none}
   <div class="cat-section" id="cat-raskladushka">
     <div class="grid">
       <a class="card fade-up" href="raskladushka-1.html">
-        <img class="card-img" src="images/raskladushka/r1.png" alt="Raskladushka" loading="lazy">
+        <img class="card-img" src="images/raskladushka/r1.png" alt="" loading="lazy">
         <div class="card-body">
-          <div class="card-name" data-uz="Yengil kemping raskladushkasi (kulrang)" data-ru="Лёгкая кемпинговая раскладушка">Yengil kemping raskladushkasi (kulrang)</div>
+          <div class="card-name" data-uz="Yengil kemping raskladushkasi" data-ru="Лёгкая кемпинговая раскладушка">Yengil kemping raskladushkasi</div>
           <div class="card-price">635 000 so'm</div>
           <span class="card-btn" data-uz="Batafsil →" data-ru="Подробнее →">Batafsil →</span>
         </div>
       </a>
       <a class="card fade-up" href="raskladushka-2.html">
-        <img class="card-img" src="images/raskladushka/r2.png" alt="Raskladushka" loading="lazy">
+        <img class="card-img" src="images/raskladushka/r2.png" alt="" loading="lazy">
         <div class="card-body">
           <div class="card-name" data-uz="Yumshoq to'shakchalik dam olish kreslo" data-ru="Кресло-шезлонг с мягкой подушкой">Yumshoq to'shakchalik dam olish kreslo</div>
           <div class="card-price">600 000 so'm</div>
@@ -152,23 +186,23 @@ footer a{color:var(--y);text-decoration:none}
         </div>
       </a>
       <a class="card fade-up" href="raskladushka-3.html">
-        <img class="card-img" src="images/raskladushka/r3.png" alt="Raskladushka" loading="lazy">
+        <img class="card-img" src="images/raskladushka/r3.png" alt="" loading="lazy">
         <div class="card-body">
-          <div class="card-name" data-uz="Bosh tayanchalik reklayner raskladushka" data-ru="Шезлонг с подголовником">Bosh tayanchalik reklayner raskladushka</div>
+          <div class="card-name" data-uz="Bosh tayanchalik reklayner" data-ru="Шезлонг с подголовником">Bosh tayanchalik reklayner</div>
           <div class="card-price">600 000 so'm</div>
           <span class="card-btn" data-uz="Batafsil →" data-ru="Подробнее →">Batafsil →</span>
         </div>
       </a>
       <a class="card fade-up" href="raskladushka-4.html">
-        <img class="card-img" src="images/raskladushka/r4.png" alt="Raskladushka" loading="lazy">
+        <img class="card-img" src="images/raskladushka/r4.png" alt="" loading="lazy">
         <div class="card-body">
-          <div class="card-name" data-uz="To'q ko'k yumshoq to'shakchalik krovet" data-ru="Тёмно-синяя мягкая раскладная кровать">To'q ko'k yumshoq to'shakchalik krovet</div>
+          <div class="card-name" data-uz="Yumshoq to'shakchalik krovet" data-ru="Мягкая раскладная кровать">Yumshoq to'shakchalik krovet</div>
           <div class="card-price">550 000 so'm</div>
           <span class="card-btn" data-uz="Batafsil →" data-ru="Подробнее →">Batafsil →</span>
         </div>
       </a>
       <a class="card fade-up" href="raskladushka-5.html">
-        <img class="card-img" src="images/raskladushka/r5.png" alt="Raskladushka" loading="lazy">
+        <img class="card-img" src="images/raskladushka/r5.png" alt="" loading="lazy">
         <div class="card-body">
           <div class="card-name" data-uz="Premium qora-zaytun raskladushka" data-ru="Премиум раскладушка чёрно-оливковая">Premium qora-zaytun raskladushka</div>
           <div class="card-price">900 000 so'm</div>
@@ -181,7 +215,7 @@ footer a{color:var(--y);text-decoration:none}
   <div class="cat-section" id="cat-stul">
     <div class="grid">
       <a class="card fade-up" href="stul-1.html">
-        <img class="card-img" src="images/stul/s1.png" alt="Stul" loading="lazy">
+        <img class="card-img" src="images/stul/s1.png" alt="" loading="lazy">
         <div class="card-body">
           <div class="card-name" data-uz="Buklama kemping stuli qora" data-ru="Складной кемпинговый стул чёрный">Buklama kemping stuli qora</div>
           <div class="card-price">145 000 so'm</div>
@@ -189,15 +223,15 @@ footer a{color:var(--y);text-decoration:none}
         </div>
       </a>
       <a class="card fade-up" href="stul-2.html">
-        <img class="card-img" src="images/stul/s2.png" alt="Stul" loading="lazy">
+        <img class="card-img" src="images/stul/s2.png" alt="" loading="lazy">
         <div class="card-body">
-          <div class="card-name" data-uz="Mustahkam SU01 stul (yog'och qo'ltiqcha)" data-ru="Прочный стул SU01 чёрный (дерево)">Mustahkam SU01 stul (yog'och qo'ltiqcha)</div>
+          <div class="card-name" data-uz="Mustahkam SU01 stul (yog'och qo'l)" data-ru="Прочный стул SU01 (дерево)">Mustahkam SU01 stul (yog'och qo'l)</div>
           <div class="card-price">180 000 so'm</div>
           <span class="card-btn" data-uz="Batafsil →" data-ru="Подробнее →">Batafsil →</span>
         </div>
       </a>
       <a class="card fade-up" href="stul-3.html">
-        <img class="card-img" src="images/stul/s3.png" alt="Stul" loading="lazy">
+        <img class="card-img" src="images/stul/s3.png" alt="" loading="lazy">
         <div class="card-body">
           <div class="card-name" data-uz="Yumshoq to'shakchalik turist kreslo" data-ru="Мягкое туристическое кресло">Yumshoq to'shakchalik turist kreslo</div>
           <div class="card-price">250 000 so'm</div>
@@ -205,15 +239,15 @@ footer a{color:var(--y);text-decoration:none}
         </div>
       </a>
       <a class="card fade-up" href="stul-4.html">
-        <img class="card-img" src="images/stul/s4.png" alt="Stul" loading="lazy">
+        <img class="card-img" src="images/stul/s4.png" alt="" loading="lazy">
         <div class="card-body">
-          <div class="card-name" data-uz="Bej yumshoq kreslo (stakan tutgich)" data-ru="Бежевое мягкое кресло (подстаканник)">Bej yumshoq kreslo (stakan tutgich)</div>
+          <div class="card-name" data-uz="Bej yumshoq kreslo (stakan tutgich)" data-ru="Бежевое мягкое кресло">Bej yumshoq kreslo (stakan tutgich)</div>
           <div class="card-price">225 000 so'm</div>
           <span class="card-btn" data-uz="Batafsil →" data-ru="Подробнее →">Batafsil →</span>
         </div>
       </a>
       <a class="card fade-up" href="stul-5.html">
-        <img class="card-img" src="images/stul/s5.png" alt="Stul" loading="lazy">
+        <img class="card-img" src="images/stul/s5.png" alt="" loading="lazy">
         <div class="card-body">
           <div class="card-name" data-uz="Yashil sallangich kreslo premium" data-ru="Зелёное кресло-качалка премиум">Yashil sallangich kreslo premium</div>
           <div class="card-price">500 000 so'm</div>
@@ -248,16 +282,17 @@ footer a{color:var(--y);text-decoration:none}
 </div>
 
 <footer>
-  <p>© 2025 Piknic Uzbekistan. <a href="tel:+998901234567">+998 90 123 45 67</a></p>
+  <p>© 2025 Piknic Uzbekistan. <a href="tel:+998555888444">+998 55 588 84 44</a></p>
 </footer>
 
 <script>
 let lang='uz';
-function toggleLang(){
-  lang=lang==='uz'?'ru':'uz';
-  document.querySelector('.lang-btn').textContent=lang==='uz'?'RU':'UZ';
+function setLang(l){
+  lang=l;
+  document.getElementById('btn-uz').classList.toggle('active',l==='uz');
+  document.getElementById('btn-ru').classList.toggle('active',l==='ru');
   document.querySelectorAll('[data-uz]').forEach(el=>{
-    el.innerHTML=el.getAttribute('data-'+lang);
+    el.innerHTML=el.getAttribute('data-'+l);
   });
 }
 function showCat(name,btn){
@@ -268,7 +303,7 @@ function showCat(name,btn){
 }
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-},{threshold:0.1});
+},{threshold:0.08});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
 </body>
