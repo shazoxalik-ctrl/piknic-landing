@@ -67,8 +67,13 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 28px;display
 .strip-item h3{font-size:16px;font-weight:700;margin-bottom:5px}
 .strip-item p{font-size:12px;opacity:.7;line-height:1.5}
 
-footer{background:var(--gd);color:rgba(255,255,255,0.65);text-align:center;padding:28px 24px;font-size:13px}
+footer{background:var(--gd);color:rgba(255,255,255,0.65);text-align:center;padding:36px 24px;font-size:13px}
 footer a{color:var(--y);text-decoration:none}
+.footer-socials{display:flex;justify-content:center;gap:14px;margin-bottom:16px}
+.soc-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:24px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s}
+.soc-btn:hover{transform:scale(1.06)}
+.soc-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+.soc-tg{background:#229ED9;color:#fff}
 
 .fade-up{opacity:0;transform:translateY(36px);transition:.65s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
@@ -282,6 +287,10 @@ footer a{color:var(--y);text-decoration:none}
 </div>
 
 <footer>
+  <div class="footer-socials">
+    <a class="soc-btn soc-ig" href="https://www.instagram.com/piknic_uz/" target="_blank">📸 Instagram</a>
+    <a class="soc-btn soc-tg" href="https://t.me/piknic_uz" target="_blank">✈️ Telegram</a>
+  </div>
   <p>© 2025 Piknic Uzbekistan. <a href="tel:+998555888444">+998 55 588 84 44</a></p>
 </footer>
 
