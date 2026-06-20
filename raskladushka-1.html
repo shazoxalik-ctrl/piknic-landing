@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Yengil kemping raskladushkasi — Piknic Uzbekistan</title>
+<title>Yig'ma karavot — Piknic Uzbekistan</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--gd:#0f3311;--gm:#1e5c22;--g:#2d7a33;--gp:#e8f5e0;--y:#f5e878}
@@ -100,7 +100,7 @@ footer a{color:var(--y);text-decoration:none}
   <div class="hero-bg"></div>
   <div class="hero-ov"></div>
   <div class="hero-c">
-    <h1 data-uz="Yengil kemping raskladushkasi" data-ru="Лёгкая кемпинговая раскладушка">Yengil kemping raskladushkasi</h1>
+    <h1 data-uz="Yig'ma karavot" data-ru="Складная кровать">Yig'ma karavot</h1>
     <div class="hero-price">635 000 so'm</div>
     <div class="hero-btns">
       <a href="#order" class="btn-o" data-uz="Buyurtma berish" data-ru="Заказать">Buyurtma berish</a>
@@ -114,12 +114,12 @@ footer a{color:var(--y);text-decoration:none}
     <!-- LEFT: info -->
     <div>
       <h2 class="sec-title" data-uz="Mahsulot haqida" data-ru="О товаре">Mahsulot haqida</h2>
-      <p class="desc" data-uz="Oddiy va yengil raskladushka. Ochiq havoda dam olish uchun qulay." data-ru="Простая и лёгкая раскладушка. Удобна для отдыха на природе.">Oddiy va yengil raskladushka. Ochiq havoda dam olish uchun qulay.</p>
-      <ul class="specs" id="specs"><li>O'lcham: 190×65 sm</li>
-<li>Og'irligi: 3.2 kg</li>
+      <p class="desc" data-uz="Konstruksiya yuqori sifatli metall qotishmasidan tayyorlangan bo'lib, barqarorlikni ta'minlaydi. O'rindig'i namlikka va yirtilishga chidamli mato bilan qoplangan. Yig'ilganda kam joy egallaydi, bu esa saqlash va tashishni osonlashtiradi. Yig'ish jarayoni maxsus asboblarsiz amalga oshiriladi." data-ru="Конструкция изготовлена из высококачественного металлического сплава для устойчивости. Сиденье покрыто тканью, устойчивой к влаге и разрывам. В сложенном виде занимает мало места. Сборка без специальных инструментов.">Konstruksiya yuqori sifatli metall qotishmasidan tayyorlangan bo'lib, barqarorlikni ta'minlaydi. O'rindig'i namlikka va yirtilishga chidamli mato bilan qoplangan. Yig'ilganda kam joy egallaydi, bu esa saqlash va tashishni osonlashtiradi. Yig'ish jarayoni maxsus asboblarsiz amalga oshiriladi.</p>
+      <ul class="specs" id="specs"><li>O'lcham: 190×68 sm</li>
+<li>Og'irligi: 3.5 kg</li>
 <li>Ko'tarish: 120 kg</li>
-<li>Material: 600D polyester</li>
-<li>Rang: Kulrang</li></ul>
+<li>Ramka: Metall qotishma</li>
+<li>Mato: Namlikka chidamli</li></ul>
     </div>
     <!-- RIGHT: carousel -->
     <div>
@@ -164,8 +164,8 @@ footer a{color:var(--y);text-decoration:none}
 
 <script>
 var IMGS=["images/raskladushka/r1/1.png", "images/raskladushka/r1/2.png"];
-var specsUz=["O'lcham: 190×65 sm", "Og'irligi: 3.2 kg", "Ko'tarish: 120 kg", "Material: 600D polyester", "Rang: Kulrang"];
-var specsRu=["Размер: 190×65 см", "Вес: 3.2 кг", "Нагрузка: 120 кг", "Материал: 600D полиэстер", "Цвет: Серый"];
+var specsUz=["O'lcham: 190×68 sm", "Og'irligi: 3.5 kg", "Ko'tarish: 120 kg", "Ramka: Metall qotishma", "Mato: Namlikka chidamli"];
+var specsRu=["Размер: 190×68 см", "Вес: 3.5 кг", "Нагрузка: 120 кг", "Рама: Металлический сплав", "Ткань: Влагостойкая"];
 var cur=0,n=IMGS.length;
 
 // build dots & thumbs
@@ -222,7 +222,7 @@ async function sendOrder(e){
   e.preventDefault();
   var name=document.getElementById('fname').value;
   var phone=document.getElementById('fphone').value;
-  var msg='🛒 Yangi buyurtma!\n\n📦 Yengil kemping raskladushkasi — 635 000 som\n👤 '+name+'\n📞 '+phone;
+  var msg='🛒 Yangi buyurtma!\n\n📦 Yig'ma karavot — 635 000 som\n👤 '+name+'\n📞 '+phone;
   var btn=document.querySelector('.sub-btn');
   btn.textContent='...'; btn.disabled=true;
   try{
