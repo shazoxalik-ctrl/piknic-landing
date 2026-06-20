@@ -1,16 +1,9 @@
 {
-  "version": 2, "_t": "20260621",
-  "builds": [
-    { "src": "api/order.js", "use": "@vercel/node" },
-    { "src": "*.html", "use": "@vercel/static" },
-    { "src": "*.svg", "use": "@vercel/static" },
-    { "src": "*.png", "use": "@vercel/static" },
-    { "src": "*.jpg", "use": "@vercel/static" },
-    { "src": "images/**", "use": "@vercel/static" },
-    { "src": "videos/**", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/api/order", "dest": "/api/order.js" },
-    { "src": "/(.*)", "dest": "/$1" }
+  "functions": {
+    "api/order.js": {}
+  },
+  "rewrites": [
+    { "source": "/api/order", "destination": "/api/order.js" },
+    { "source": "/(.*)", "destination": "/$1" }
   ]
 }
