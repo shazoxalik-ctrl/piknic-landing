@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bosh tayanchalik reklayner raskladushka — Piknic Uzbekistan</title>
+<title>Sayohat karavoti — Piknic Uzbekistan</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--gd:#0f3311;--gm:#1e5c22;--g:#2d7a33;--gp:#e8f5e0;--y:#f5e878}
@@ -100,7 +100,7 @@ footer a{color:var(--y);text-decoration:none}
   <div class="hero-bg"></div>
   <div class="hero-ov"></div>
   <div class="hero-c">
-    <h1 data-uz="Bosh tayanchalik reklayner raskladushka" data-ru="Шезлонг с подголовником">Bosh tayanchalik reklayner raskladushka</h1>
+    <h1 data-uz="Sayohat karavoti" data-ru="Походная кровать">Sayohat karavoti</h1>
     <div class="hero-price">600 000 so'm</div>
     <div class="hero-btns">
       <a href="#order" class="btn-o" data-uz="Buyurtma berish" data-ru="Заказать">Buyurtma berish</a>
@@ -114,12 +114,12 @@ footer a{color:var(--y);text-decoration:none}
     <!-- LEFT: info -->
     <div>
       <h2 class="sec-title" data-uz="Mahsulot haqida" data-ru="О товаре">Mahsulot haqida</h2>
-      <p class="desc" data-uz="Bosh tayanchi va qo'l tayanchi bilan jihozlangan qulay raskladushka." data-ru="Удобный шезлонг с подголовником и подлокотниками.">Bosh tayanchi va qo'l tayanchi bilan jihozlangan qulay raskladushka.</p>
-      <ul class="specs" id="specs"><li>O'lcham: 180×60 sm</li>
-<li>Og'irligi: 4.2 kg</li>
-<li>Ko'tarish: 130 kg</li>
-<li>Bosh tayanch: bor</li>
-<li>Qo'l tayanch: bor</li></ul>
+      <p class="desc" data-uz="Konstruksiya yuqori sifatli metall qotishmasidan tayyorlangan bo'lib, barqarorlikni ta'minlaydi. O'rindig'i namlikka va yirtilishga chidamli mato bilan qoplangan. Yig'ilganda kam joy egallaydi, bu esa saqlash va tashishni osonlashtiradi. Yig'ish jarayoni maxsus asboblarsiz amalga oshiriladi." data-ru="Конструкция изготовлена из высококачественного металлического сплава для устойчивости. Сиденье покрыто тканью, устойчивой к влаге и разрывам. В сложенном виде занимает мало места. Сборка без специальных инструментов.">Konstruksiya yuqori sifatli metall qotishmasidan tayyorlangan bo'lib, barqarorlikni ta'minlaydi. O'rindig'i namlikka va yirtilishga chidamli mato bilan qoplangan. Yig'ilganda kam joy egallaydi, bu esa saqlash va tashishni osonlashtiradi. Yig'ish jarayoni maxsus asboblarsiz amalga oshiriladi.</p>
+      <ul class="specs" id="specs"><li>O'lcham: 190×68 sm</li>
+<li>Og'irligi: 3.5 kg</li>
+<li>Ko'tarish: 120 kg</li>
+<li>Ramka: Metall qotishma</li>
+<li>Mato: Namlikka chidamli</li></ul>
     </div>
     <!-- RIGHT: carousel -->
     <div>
@@ -157,8 +157,8 @@ footer a{color:var(--y);text-decoration:none}
 
 <script>
 var IMGS=["images/raskladushka/r3/1.png"];
-var specsUz=["O'lcham: 180×60 sm", "Og'irligi: 4.2 kg", "Ko'tarish: 130 kg", "Bosh tayanch: bor", "Qo'l tayanch: bor"];
-var specsRu=["Размер: 180×60 см", "Вес: 4.2 кг", "Нагрузка: 130 кг", "Подголовник: есть", "Подлокотники: есть"];
+var specsUz=["O'lcham: 190×68 sm", "Og'irligi: 3.5 kg", "Ko'tarish: 120 kg", "Ramka: Metall qotishma", "Mato: Namlikka chidamli"];
+var specsRu=["Размер: 190×68 см", "Вес: 3.5 кг", "Нагрузка: 120 кг", "Рама: Металлический сплав", "Ткань: Влагостойкая"];
 var cur=0,n=IMGS.length;
 
 // build dots & thumbs
@@ -215,7 +215,7 @@ async function sendOrder(e){
   e.preventDefault();
   var name=document.getElementById('fname').value;
   var phone=document.getElementById('fphone').value;
-  var msg='🛒 Yangi buyurtma!\n\n📦 Bosh tayanchalik reklayner raskladushka — 600 000 som\n👤 '+name+'\n📞 '+phone;
+  var msg='🛒 Yangi buyurtma!\n\n📦 Sayohat karavoti — 600 000 som\n👤 '+name+'\n📞 '+phone;
   var btn=document.querySelector('.sub-btn');
   btn.textContent='...'; btn.disabled=true;
   try{
