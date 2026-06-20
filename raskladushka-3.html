@@ -48,6 +48,28 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 24px;display
 .submit-btn:hover{background:var(--gd)}
 .success{display:none;background:var(--g);color:#fff;padding:20px;border-radius:12px;text-align:center;font-weight:600;margin-top:16px}
 .video-section{background:#f8f8f8;padding:60px 24px;text-align:center}.video-wrap{max-width:860px;margin:0 auto}.video-title{font-size:26px;font-weight:800;color:#0f3311;margin-bottom:24px}
+
+/* CAROUSEL */
+.carousel{position:relative;background:#111;overflow:hidden}
+.carousel-track{display:flex;transition:transform .4s ease}
+.carousel-slide{min-width:100%;height:100vh;position:relative;flex-shrink:0}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.carousel-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,35,12,0.35) 0%,rgba(10,35,12,0.75) 100%)}
+.carousel-content{position:absolute;bottom:0;left:0;right:0;padding:40px 24px 60px;color:#fff;text-align:center}
+.carousel-content h1{font-size:clamp(24px,5vw,52px);font-weight:800;letter-spacing:-1px;margin-bottom:10px;line-height:1.1}
+.carousel-price{font-size:clamp(20px,3.5vw,36px);font-weight:800;color:var(--y);margin-bottom:28px}
+.carousel-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.carousel-prev,.carousel-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.2);border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer;z-index:10;transition:.2s;backdrop-filter:blur(4px)}
+.carousel-prev{left:16px}
+.carousel-next{right:16px}
+.carousel-prev:hover,.carousel-next:hover{background:rgba(255,255,255,0.35)}
+.carousel-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:.2s;border:none}
+.dot.active{background:#fff;width:20px;border-radius:4px}
+.thumbs{display:flex;gap:10px;padding:16px 24px;overflow-x:auto;background:#f5f5f5;justify-content:center;flex-wrap:wrap}
+.thumb{width:72px;height:72px;object-fit:cover;border-radius:10px;cursor:pointer;border:3px solid transparent;transition:.2s;flex-shrink:0}
+.thumb.active{border-color:var(--g)}
+
 footer{background:var(--gd);color:rgba(255,255,255,0.7);text-align:center;padding:32px 24px;font-size:13px}
 footer a{color:var(--y);text-decoration:none}
 </style>
@@ -68,18 +90,22 @@ footer a{color:var(--y);text-decoration:none}
   </div>
 </header>
 
-<section class="hero">
-  <img src="images/raskladushka/r3.png" alt="Bosh tayanchalik reklayner raskladushka">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
+<section class="carousel" id="heroCarousel">
+  <div class="carousel-track" id="cTrack"></div>
+  <div class="carousel-overlay"></div>
+  <div class="carousel-content">
     <h1 data-uz="Bosh tayanchalik reklayner raskladushka" data-ru="Шезлонг с подголовником">Bosh tayanchalik reklayner raskladushka</h1>
-    <div class="hero-price">600 000 so'm</div>
-    <div class="hero-btns">
+    <div class="carousel-price">600 000 so'm</div>
+    <div class="carousel-btns">
       <a href="#order" class="btn-order" data-uz="Buyurtma berish" data-ru="Заказать">Buyurtma berish</a>
-      <a href="tel:+998901234567" class="btn-call" data-uz="Qo'ng'iroq qilish" data-ru="Позвонить">Qo'ng'iroq qilish</a>
+      <a href="tel:+998555888444" class="btn-call" data-uz="Qo'ng'iroq qilish" data-ru="Позвонить">Qo'ng'iroq qilish</a>
     </div>
   </div>
+  <button class="carousel-prev" id="cPrev">‹</button>
+  <button class="carousel-next" id="cNext">›</button>
+  <div class="carousel-dots" id="cDots"></div>
 </section>
+<div class="thumbs" id="cThumbs"></div>
 
 <section class="details">
   <div>
@@ -164,6 +190,50 @@ async function submitOrder(e){
     alert(lang==='uz'?'Xatolik! Qayta urinib ko'ring.':'Ошибка! Попробуйте снова.');
   }
 }
+</script>
+
+<script>
+
+(function(){
+  const imgs = ["images/raskladushka/r3/1.png"];
+  let cur = 0;
+  const track = document.getElementById('cTrack');
+  const dotsEl = document.getElementById('cDots');
+  const thumbsEl = document.getElementById('cThumbs');
+
+  imgs.forEach((src,i)=>{
+    // slide
+    const slide = document.createElement('div');
+    slide.className='carousel-slide';
+    const img = document.createElement('img');
+    img.src=src; img.alt=''; img.loading= i===0?'eager':'lazy';
+    slide.appendChild(img);
+    track.appendChild(slide);
+    // dot
+    const dot=document.createElement('button');
+    dot.className='dot'+(i===0?' active':'');
+    dot.onclick=()=>goTo(i);
+    dotsEl.appendChild(dot);
+    // thumb
+    const th=document.createElement('img');
+    th.src=src; th.className='thumb'+(i===0?' active':'');
+    th.loading='lazy'; th.onclick=()=>goTo(i);
+    thumbsEl.appendChild(th);
+  });
+
+  function goTo(n){
+    cur=n;
+    track.style.transform=`translateX(-${cur*100}%)`;
+    document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+    document.querySelectorAll('.thumb').forEach((t,i)=>t.classList.toggle('active',i===cur));
+  }
+  document.getElementById('cPrev').onclick=()=>goTo((cur-1+imgs.length)%imgs.length);
+  document.getElementById('cNext').onclick=()=>goTo((cur+1)%imgs.length);
+
+  // auto-advance
+  setInterval(()=>goTo((cur+1)%imgs.length), 4000);
+})();
+
 </script>
 </body>
 </html>
