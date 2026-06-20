@@ -6,7 +6,8 @@
     { "src": "*.svg", "use": "@vercel/static" },
     { "src": "*.png", "use": "@vercel/static" },
     { "src": "*.jpg", "use": "@vercel/static" },
-    { "src": "images/**", "use": "@vercel/static" }
+    { "src": "images/**", "use": "@vercel/static" },
+    { "src": "videos/**", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/order", "dest": "/api/order.js" },
