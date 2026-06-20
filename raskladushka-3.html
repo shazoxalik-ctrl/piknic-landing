@@ -8,69 +8,65 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--gd:#0f3311;--gm:#1e5c22;--g:#2d7a33;--gp:#e8f5e0;--y:#f5e878}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#111}
-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,51,17,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-wrap img{height:44px;width:44px;object-fit:contain}
-.logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-text span:first-child{font-size:16px;font-weight:700;color:#fff;letter-spacing:1px}
-.logo-text span:last-child{font-size:9px;font-weight:500;color:var(--y);letter-spacing:2px}
-.header-right{display:flex;gap:12px;align-items:center}
-.back-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:13px;text-decoration:none}
-.lang-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:6px 16px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:600}
-.hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,51,17,0.4) 0%,rgba(15,51,17,0.7) 100%)}
-.hero-content{position:relative;z-index:1;text-align:center;color:#fff;padding:100px 24px 40px}
-.hero-content h1{font-size:clamp(28px,6vw,60px);font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.1}
-.hero-price{font-size:clamp(24px,4vw,40px);font-weight:800;color:var(--y);margin-bottom:32px}
-.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn-order{background:var(--y);color:var(--gd);padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:.2s;text-decoration:none;display:inline-block}
-.btn-order:hover{transform:scale(1.04);box-shadow:0 8px 30px rgba(245,232,120,0.4)}
-.btn-call{background:rgba(255,255,255,0.2);color:#fff;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;border:2px solid rgba(255,255,255,0.5);cursor:pointer;transition:.2s;text-decoration:none;display:inline-block}
-.btn-call:hover{background:rgba(255,255,255,0.3)}
-.details{padding:80px 24px;max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-@media(max-width:700px){.details{grid-template-columns:1fr;gap:40px}}
-.details h2{font-size:28px;font-weight:800;color:var(--gd);margin-bottom:20px}
-.details p{font-size:16px;line-height:1.7;color:#444;margin-bottom:24px}
-.specs{list-style:none}
-.specs li{padding:10px 0;border-bottom:1px solid #eee;font-size:15px;display:flex;gap:8px}
-.specs li::before{content:'✓';color:var(--g);font-weight:700}
-.details-img{width:100%;border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,0.15)}
-.order-section{background:var(--gp);padding:80px 24px}
-.order-wrap{max-width:480px;margin:0 auto;text-align:center}
-.order-wrap h2{font-size:28px;font-weight:800;color:var(--gd);margin-bottom:8px}
-.order-wrap p{color:#555;margin-bottom:32px}
-.form-group{margin-bottom:16px;text-align:left}
-.form-group label{font-size:13px;font-weight:600;color:var(--gd);display:block;margin-bottom:6px}
-.form-group input{width:100%;padding:14px 18px;border:2px solid #ddd;border-radius:12px;font-size:16px;outline:none;transition:.2s}
-.form-group input:focus{border-color:var(--g)}
-.submit-btn{width:100%;padding:16px;background:var(--g);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;transition:.2s;margin-top:8px}
-.submit-btn:hover{background:var(--gd)}
-.success{display:none;background:var(--g);color:#fff;padding:20px;border-radius:12px;text-align:center;font-weight:600;margin-top:16px}
-.video-section{background:#f8f8f8;padding:60px 24px;text-align:center}.video-wrap{max-width:860px;margin:0 auto}.video-title{font-size:26px;font-weight:800;color:#0f3311;margin-bottom:24px}
-
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,51,17,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.logo-wrap{display:flex;align-items:center;gap:8px;text-decoration:none}
+.logo-wrap img{height:38px;width:38px;object-fit:contain}
+.logo-text .lt1{font-size:14px;font-weight:700;color:#fff;letter-spacing:1px;display:block}
+.logo-text .lt2{font-size:8px;color:var(--y);letter-spacing:2px;display:block}
+.hdr-right{display:flex;gap:10px;align-items:center}
+.back-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:7px 14px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none}
+.lang-wrap{display:flex;border:1.5px solid rgba(255,255,255,0.4);border-radius:20px;overflow:hidden}
+.lang-opt{padding:5px 12px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.6);cursor:pointer;border:none;background:transparent}
+.lang-opt.active{background:rgba(255,255,255,0.25);color:#fff}
+/* HERO */
+.hero{height:100svh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero-bg{position:absolute;inset:0;background:url('images/raskladushka/r3/1.png') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,35,12,0.3),rgba(10,35,12,0.75))}
+.hero-content{position:relative;z-index:1;padding:80px 20px 40px;width:100%}
+.hero-content h1{font-size:clamp(22px,6vw,52px);font-weight:800;color:#fff;letter-spacing:-0.5px;line-height:1.15;margin-bottom:12px}
+.hero-price{font-size:clamp(20px,5vw,36px);font-weight:800;color:var(--y);margin-bottom:28px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-order{background:var(--y);color:var(--gd);padding:14px 28px;border-radius:50px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.btn-call{background:rgba(255,255,255,0.18);color:#fff;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:700;border:2px solid rgba(255,255,255,0.5);text-decoration:none;display:inline-block}
+/* DETAILS */
+.details{padding:40px 20px}
+.container{max-width:900px;margin:0 auto}
 /* CAROUSEL */
-.carousel{position:relative;background:#111;overflow:hidden}
-.carousel-track{display:flex;transition:transform .4s ease}
-.carousel-slide{min-width:100%;height:100vh;position:relative;flex-shrink:0}
-.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}
-.carousel-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,35,12,0.35) 0%,rgba(10,35,12,0.75) 100%)}
-.carousel-content{position:absolute;bottom:0;left:0;right:0;padding:40px 24px 60px;color:#fff;text-align:center}
-.carousel-content h1{font-size:clamp(24px,5vw,52px);font-weight:800;letter-spacing:-1px;margin-bottom:10px;line-height:1.1}
-.carousel-price{font-size:clamp(20px,3.5vw,36px);font-weight:800;color:var(--y);margin-bottom:28px}
-.carousel-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.carousel-prev,.carousel-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.2);border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer;z-index:10;transition:.2s;backdrop-filter:blur(4px)}
-.carousel-prev{left:16px}
-.carousel-next{right:16px}
-.carousel-prev:hover,.carousel-next:hover{background:rgba(255,255,255,0.35)}
-.carousel-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:.2s;border:none}
-.dot.active{background:#fff;width:20px;border-radius:4px}
-.thumbs{display:flex;gap:10px;padding:16px 24px;overflow-x:auto;background:#f5f5f5;justify-content:center;flex-wrap:wrap}
-.thumb{width:72px;height:72px;object-fit:cover;border-radius:10px;cursor:pointer;border:3px solid transparent;transition:.2s;flex-shrink:0}
+.gallery{margin-bottom:32px}
+.gallery-main{position:relative;border-radius:16px;overflow:hidden;background:#f0f0f0;aspect-ratio:1}
+.gallery-main img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .25s}
+.g-prev,.g-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.35);border:none;color:#fff;width:40px;height:40px;border-radius:50%;font-size:18px;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
+.g-prev{left:10px}.g-next{right:10px}
+.g-counter{position:absolute;bottom:12px;right:14px;background:rgba(0,0,0,0.5);color:#fff;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px}
+.thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.thumbs::-webkit-scrollbar{height:4px}.thumbs::-webkit-scrollbar-thumb{background:#ccc;border-radius:2px}
+.thumb{width:64px;height:64px;object-fit:cover;border-radius:10px;cursor:pointer;border:2.5px solid transparent;transition:.15s;flex-shrink:0}
 .thumb.active{border-color:var(--g)}
-
-footer{background:var(--gd);color:rgba(255,255,255,0.7);text-align:center;padding:32px 24px;font-size:13px}
+/* INFO */
+.info-wrap{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:640px){.info-wrap{grid-template-columns:1fr 1fr}}
+.sec-title{font-size:20px;font-weight:800;color:var(--gd);margin-bottom:14px}
+.desc{font-size:15px;line-height:1.7;color:#444;margin-bottom:20px}
+.specs{list-style:none}
+.specs li{padding:9px 0;border-bottom:1px solid #eee;font-size:14px;display:flex;gap:8px;align-items:center}
+.specs li::before{content:'✓';color:var(--g);font-weight:700;flex-shrink:0}
+/* VIDEO */
+.video-sec{padding:32px 20px;background:#f5f5f5}
+.product-video{width:100%;border-radius:14px;display:block;max-height:480px;object-fit:contain;background:#000}
+/* ORDER */
+.order-sec{background:var(--gp);padding:40px 20px}
+.order-wrap{max-width:440px;margin:0 auto;text-align:center}
+.order-wrap h2{font-size:22px;font-weight:800;color:var(--gd);margin-bottom:8px}
+.order-wrap p{color:#666;font-size:14px;margin-bottom:28px;line-height:1.5}
+.form-group{margin-bottom:14px;text-align:left}
+.form-group label{font-size:12px;font-weight:700;color:var(--gd);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.form-group input{width:100%;padding:14px 16px;border:2px solid #ddd;border-radius:12px;font-size:16px;outline:none;transition:.2s;-webkit-appearance:none}
+.form-group input:focus{border-color:var(--g)}
+.submit-btn{width:100%;padding:16px;background:var(--g);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:6px;-webkit-tap-highlight-color:transparent}
+.submit-btn:active{background:var(--gd)}
+.success{display:none;background:var(--g);color:#fff;padding:20px;border-radius:12px;text-align:center;font-weight:600;margin-top:16px;font-size:15px}
+footer{background:var(--gd);color:rgba(255,255,255,0.65);text-align:center;padding:24px 20px;font-size:13px}
 footer a{color:var(--y);text-decoration:none}
 </style>
 </head>
@@ -79,161 +75,162 @@ footer a{color:var(--y);text-decoration:none}
 <header>
   <a class="logo-wrap" href="index.html">
     <img src="logo.svg" alt="Piknic">
-    <div class="logo-text">
-      <span>PIKNIC</span>
-      <span>UZBEKISTAN</span>
-    </div>
+    <div class="logo-text"><span class="lt1">PIKNIC</span><span class="lt2">UZBEKISTAN</span></div>
   </a>
-  <div class="header-right">
+  <div class="hdr-right">
     <a class="back-btn" href="index.html">← <span data-uz="Orqaga" data-ru="Назад">Orqaga</span></a>
-    <button class="lang-btn" onclick="toggleLang()">RU</button>
+    <div class="lang-wrap">
+      <button class="lang-opt active" id="btn-uz" onclick="setLang('uz')">UZ</button>
+      <button class="lang-opt" id="btn-ru" onclick="setLang('ru')">RU</button>
+    </div>
   </div>
 </header>
 
-<section class="carousel" id="heroCarousel">
-  <div class="carousel-track" id="cTrack"></div>
-  <div class="carousel-overlay"></div>
-  <div class="carousel-content">
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
     <h1 data-uz="Bosh tayanchalik reklayner raskladushka" data-ru="Шезлонг с подголовником">Bosh tayanchalik reklayner raskladushka</h1>
-    <div class="carousel-price">600 000 so'm</div>
-    <div class="carousel-btns">
+    <div class="hero-price">600 000 so'm</div>
+    <div class="hero-btns">
       <a href="#order" class="btn-order" data-uz="Buyurtma berish" data-ru="Заказать">Buyurtma berish</a>
       <a href="tel:+998555888444" class="btn-call" data-uz="Qo'ng'iroq qilish" data-ru="Позвонить">Qo'ng'iroq qilish</a>
     </div>
   </div>
-  <button class="carousel-prev" id="cPrev">‹</button>
-  <button class="carousel-next" id="cNext">›</button>
-  <div class="carousel-dots" id="cDots"></div>
 </section>
-<div class="thumbs" id="cThumbs"></div>
 
 <section class="details">
-  <div>
-    <h2 data-uz="Mahsulot haqida" data-ru="О товаре">Mahsulot haqida</h2>
-    <p data-uz="Bosh tayanchi va qo'l tayanchi bilan jihozlangan qulay raskladushka." data-ru="Удобный шезлонг с подголовником и подлокотниками.">Bosh tayanchi va qo'l tayanchi bilan jihozlangan qulay raskladushka.</p>
-    <ul class="specs" id="specs-list">
-      <li>O'lcham: 180×60 sm</li>
-      <li>Og'irligi: 4.2 kg</li>
-      <li>Ko'tarish: 130 kg</li>
-      <li>Bosh tayanch: bor</li>
-      <li>Qo'l tayanch: bor</li>
-    </ul>
-  </div>
-  <div>
-    <img class="details-img" src="images/raskladushka/r3.png" alt="Bosh tayanchalik reklayner raskladushka">
+  <div class="container">
+
+    <!-- IMAGE GALLERY -->
+    <div class="gallery">
+      <div class="gallery-main" id="gMain">
+        <img id="gImg" src="images/raskladushka/r3/1.png" alt="Bosh tayanchalik reklayner raskladushka">
+        <button class="g-prev" id="gPrev">&#8249;</button>
+        <button class="g-next" id="gNext">&#8250;</button>
+        <div class="g-counter"><span id="gCur">1</span>/<span id="gTotal">1</span></div>
+      </div>
+      <div class="thumbs" id="gThumbs"></div>
+    </div>
+
+    <div class="info-wrap">
+      <div>
+        <h2 class="sec-title" data-uz="Mahsulot haqida" data-ru="О товаре">Mahsulot haqida</h2>
+        <p class="desc" data-uz="Bosh tayanchi va qo'l tayanchi bilan jihozlangan qulay raskladushka." data-ru="Удобный шезлонг с подголовником и подлокотниками.">Bosh tayanchi va qo'l tayanchi bilan jihozlangan qulay raskladushka.</p>
+        <ul class="specs" id="specsList"><li>O'lcham: 180×60 sm</li>
+<li>Og'irligi: 4.2 kg</li>
+<li>Ko'tarish: 130 kg</li>
+<li>Bosh tayanch: bor</li>
+<li>Qo'l tayanch: bor</li></ul>
+      </div>
+      <div></div>
+    </div>
+
   </div>
 </section>
 
-<section class="video-section"><div class="video-wrap"><h2 class="video-title" data-uz="Mahsulot videosi" data-ru="Видео товара">Mahsulot videosi</h2><video controls playsinline preload="metadata" style="width:100%;max-width:800px;border-radius:16px;display:block;margin:0 auto"><source src="videos/raskladushka/r3.mov" type="video/mp4"></video></div></section><section class="order-section" id="order">
+<section class="video-sec">
+  <div class="container">
+    <h2 class="sec-title" data-uz="Mahsulot videosi" data-ru="Видео товара">Mahsulot videosi</h2>
+    <video controls playsinline preload="metadata" class="product-video">
+      <source src="videos/raskladushka/r3.mov" type="video/mp4">
+    </video>
+  </div>
+</section>
+<section class="order-sec" id="order">
   <div class="order-wrap">
     <h2 data-uz="Buyurtma berish" data-ru="Оформить заказ">Buyurtma berish</h2>
-    <p data-uz="Ma'lumotlaringizni qoldiring, tez orada siz bilan bog'lanamiz" data-ru="Оставьте данные, мы свяжемся с вами в ближайшее время">Ma'lumotlaringizni qoldiring, tez orada siz bilan bog'lanamiz</p>
+    <p data-uz="Ma'lumotlaringizni qoldiring, tez orada bog'lanamiz" data-ru="Оставьте данные, мы свяжемся с вами">Ma'lumotlaringizni qoldiring, tez orada bog'lanamiz</p>
     <form id="orderForm" onsubmit="submitOrder(event)">
       <div class="form-group">
         <label data-uz="Ismingiz" data-ru="Ваше имя">Ismingiz</label>
-        <input type="text" id="name" placeholder="Ali Valiyev" required>
+        <input type="text" id="fname" placeholder="Ali Valiyev" required autocomplete="name">
       </div>
       <div class="form-group">
-        <label data-uz="Telefon raqamingiz" data-ru="Ваш телефон">Telefon raqamingiz</label>
-        <input type="tel" id="phone" placeholder="+998 90 123 45 67" required>
+        <label data-uz="Telefon" data-ru="Телефон">Telefon</label>
+        <input type="tel" id="fphone" placeholder="+998 90 123 45 67" required autocomplete="tel">
       </div>
       <button type="submit" class="submit-btn" data-uz="Buyurtmani yuborish" data-ru="Отправить заказ">Buyurtmani yuborish</button>
     </form>
-    <div class="success" id="success">✅ <span data-uz="Buyurtmangiz qabul qilindi! Tez orada siz bilan bog'lanamiz." data-ru="Ваш заказ принят! Мы свяжемся с вами в ближайшее время.">Buyurtmangiz qabul qilindi! Tez orada siz bilan bog'lanamiz.</span></div>
+    <div class="success" id="success">✅ <span data-uz="Buyurtmangiz qabul qilindi! Tez orada siz bilan bog'lanamiz." data-ru="Ваш заказ принят! Мы свяжемся с вами.">Buyurtmangiz qabul qilindi! Tez orada siz bilan bog'lanamiz.</span></div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Piknic Uzbekistan. <a href="tel:+998901234567">+998 90 123 45 67</a></p>
+  <p>© 2025 Piknic Uzbekistan · <a href="tel:+998555888444">+998 55 588 84 44</a></p>
 </footer>
 
 <script>
-const TG_TOKEN='8694117669:AAE-SkebThFY8NwLX9KS3c_gWPQEKBL_dOI';
-const TG_CHAT='-5444262568';
-const PRODUCT='Bosh tayanchalik reklayner raskladushka';
-const PRICE='600 000 som';
+const IMGS = ["images/raskladushka/r3/1.png"];
+const specsUz = ["O'lcham: 180×60 sm", "Og'irligi: 4.2 kg", "Ko'tarish: 130 kg", "Bosh tayanch: bor", "Qo'l tayanch: bor"];
+const specsRu = ["Размер: 180×60 см", "Вес: 4.2 кг", "Нагрузка: 130 кг", "Подголовник: есть", "Подлокотники: есть"];
+const TG_TOKEN = '8694117669:AAE-SkebThFY8NwLX9KS3c_gWPQEKBL_dOI';
+const TG_CHAT  = '-5444262568';
+const PROD = 'Bosh tayanchalik reklayner raskladushka — 600 000 som';
 
+// --- GALLERY ---
+let cur = 0;
+const gImg   = document.getElementById('gImg');
+const gCur   = document.getElementById('gCur');
+const gThumbs= document.getElementById('gThumbs');
+
+IMGS.forEach((src,i)=>{
+  const th = document.createElement('img');
+  th.src=src; th.className='thumb'+(i===0?' active':'');
+  th.loading='lazy'; th.onclick=()=>goTo(i);
+  gThumbs.appendChild(th);
+});
+
+function goTo(n){
+  cur=n;
+  gImg.src=IMGS[cur];
+  gCur.textContent=cur+1;
+  document.querySelectorAll('.thumb').forEach((t,i)=>t.classList.toggle('active',i===cur));
+}
+document.getElementById('gPrev').onclick=()=>goTo((cur-1+IMGS.length)%IMGS.length);
+document.getElementById('gNext').onclick=()=>goTo((cur+1)%IMGS.length);
+
+// Touch swipe
+let tx=0;
+const gMain=document.getElementById('gMain');
+gMain.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+gMain.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-tx;
+  if(Math.abs(dx)>40)goTo(dx<0?(cur+1)%IMGS.length:(cur-1+IMGS.length)%IMGS.length);
+});
+
+// --- LANG ---
 let lang='uz';
-const specsUz=["O'lcham: 180×60 sm", "Og'irligi: 4.2 kg", "Ko'tarish: 130 kg", "Bosh tayanch: bor", "Qo'l tayanch: bor"];
-const specsRu=["Размер: 180×60 см", "Вес: 4.2 кг", "Нагрузка: 130 кг", "Подголовник: есть", "Подлокотники: есть"];
-
-function toggleLang(){
-  lang=lang==='uz'?'ru':'uz';
-  document.querySelector('.lang-btn').textContent=lang==='uz'?'RU':'UZ';
-  document.querySelectorAll('[data-uz]').forEach(el=>{
-    el.innerHTML=el.getAttribute('data-'+lang);
-  });
-  const list=document.getElementById('specs-list');
-  const specs=lang==='uz'?specsUz:specsRu;
-  list.innerHTML=specs.map(s=>`<li>${s}</li>`).join('');
+function setLang(l){
+  lang=l;
+  document.getElementById('btn-uz').classList.toggle('active',l==='uz');
+  document.getElementById('btn-ru').classList.toggle('active',l==='ru');
+  document.querySelectorAll('[data-uz]').forEach(el=>el.innerHTML=el.getAttribute('data-'+l));
+  const sp=lang==='uz'?specsUz:specsRu;
+  document.getElementById('specsList').innerHTML=sp.map(s=>`<li>${s}</li>`).join('');
 }
 
+// --- ORDER ---
 async function submitOrder(e){
   e.preventDefault();
-  const name=document.getElementById('name').value;
-  const phone=document.getElementById('phone').value;
-  const msg=`🛒 Yangi buyurtma!\n\n📦 Mahsulot: ${PRODUCT}\n💰 Narx: ${PRICE}\n\n👤 Ism: ${name}\n📞 Telefon: ${phone}`;
+  const name=document.getElementById('fname').value;
+  const phone=document.getElementById('fphone').value;
+  const msg=`🛒 Yangi buyurtma!\n\n📦 ${PROD}\n👤 ${name}\n📞 ${phone}`;
   const btn=document.querySelector('.submit-btn');
-  btn.textContent='...';
-  btn.disabled=true;
+  btn.textContent='...'; btn.disabled=true;
   try{
     await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`,{
       method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({chat_id:TG_CHAT,text:msg})
     });
     document.getElementById('orderForm').style.display='none';
-    const s=document.getElementById('success');
-    s.style.display='block';
-  }catch(err){
+    document.getElementById('success').style.display='block';
+  }catch{
     btn.textContent=lang==='uz'?'Buyurtmani yuborish':'Отправить заказ';
     btn.disabled=false;
     alert(lang==='uz'?'Xatolik! Qayta urinib ko'ring.':'Ошибка! Попробуйте снова.');
   }
 }
-</script>
-
-<script>
-
-(function(){
-  const imgs = ["images/raskladushka/r3/1.png"];
-  let cur = 0;
-  const track = document.getElementById('cTrack');
-  const dotsEl = document.getElementById('cDots');
-  const thumbsEl = document.getElementById('cThumbs');
-
-  imgs.forEach((src,i)=>{
-    // slide
-    const slide = document.createElement('div');
-    slide.className='carousel-slide';
-    const img = document.createElement('img');
-    img.src=src; img.alt=''; img.loading= i===0?'eager':'lazy';
-    slide.appendChild(img);
-    track.appendChild(slide);
-    // dot
-    const dot=document.createElement('button');
-    dot.className='dot'+(i===0?' active':'');
-    dot.onclick=()=>goTo(i);
-    dotsEl.appendChild(dot);
-    // thumb
-    const th=document.createElement('img');
-    th.src=src; th.className='thumb'+(i===0?' active':'');
-    th.loading='lazy'; th.onclick=()=>goTo(i);
-    thumbsEl.appendChild(th);
-  });
-
-  function goTo(n){
-    cur=n;
-    track.style.transform=`translateX(-${cur*100}%)`;
-    document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
-    document.querySelectorAll('.thumb').forEach((t,i)=>t.classList.toggle('active',i===cur));
-  }
-  document.getElementById('cPrev').onclick=()=>goTo((cur-1+imgs.length)%imgs.length);
-  document.getElementById('cNext').onclick=()=>goTo((cur+1)%imgs.length);
-
-  // auto-advance
-  setInterval(()=>goTo((cur+1)%imgs.length), 4000);
-})();
-
 </script>
 </body>
 </html>
