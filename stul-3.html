@@ -265,6 +265,7 @@ async function sendOrder(e){
     ok.style.fontSize='17px';
     ok.style.borderRadius='16px';
     ok.scrollIntoView({behavior:'smooth',block:'center'});
+    fbq('track', 'Lead', {content_name: 'Yumshoq toʻshakchalik turist kreslo'});
   }catch{
     btn.textContent=lang==='uz'?'Buyurtmani yuborish':'Отправить заказ';
     btn.disabled=false;
